@@ -79,12 +79,12 @@ export async function signIn(params: SignInParams) {
     }
 }
 
-// export async function signOut() {
-//     const cookieStore = await cookies();
-//
-//     cookieStore.delete("session");
-// }
-//
+export async function signOut() {
+    const cookieStore = await cookies();
+
+    cookieStore.delete("session");
+}
+
 export async function getCurrentUser(): Promise<User | null> {
     const cookieStore = await cookies();
 
@@ -115,3 +115,4 @@ export async function isAuthenticated() {
     const user = await getCurrentUser();
     return !!user;
 }
+
